@@ -47,8 +47,8 @@
     "make": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make",
     "make:zip": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make --targets @electron-forge/maker-zip",
     "make:deb": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make --targets @electron-forge/maker-deb",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -77,6 +77,7 @@
     "@electron-forge/maker-zip": "^6.0.4",
     "concurrently": "^7.6.0",
     "electron": "^22.1.0",
+    "electron-devtools-installer": "^3.2.0",
     "electron-packager": "^17.1.1",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",

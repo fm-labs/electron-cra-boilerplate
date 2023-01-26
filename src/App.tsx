@@ -18,6 +18,14 @@ function App() {
         >
           Learn React
         </a>
+        <a
+          className='App-link'
+          href='chrome://extensions'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Extensions
+        </a>
       </header>
     </div>
   )

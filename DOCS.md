@@ -38,7 +38,7 @@ But we are going to fix this later !
 The `concurrently` package enables us to run multiple commands.
 
     $ yarn add --dev concurrently wait-on
-    $ yarn add electron-is-dev
+    $ yarn add --dev electron-is-dev
 
 
 ## Setup application for Electron's main process
@@ -63,6 +63,27 @@ Now we have to add/update the `main` script location in your `package.json`.
 {
   "main": "main/electron.js"
 }
+```
+
+
+## Setup react-dev-tools
+
+    $ yarn add --dev electron-devtools-installer
+
+```js
+// main/electron.js
+// Add to createWindow() function:
+
+// ...
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
+  console.log(`Added Extension:  ${name}`);
+})
+.catch((err) => {
+  console.log('An error occurred: ', err);
+});
+// ...
+
 ```
 
 

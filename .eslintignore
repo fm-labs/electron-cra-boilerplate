@@ -1,6 +1,8 @@
 /.idea/
 /.git/
+/.github/
 /build/
 /public/
 /node_modules/
 /out/
+/main/react-devtools-extension

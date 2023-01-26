@@ -1,4 +1,5 @@
 .idea/
+main/react-devtools-extension
 
 # electron forge
 out/

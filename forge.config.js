@@ -3,7 +3,16 @@ const { serialHooks } = require('electron-packager/src/hooks')
 module.exports = {
   packagerConfig: {
     dir: 'build',
-    ignore: ['.idea', '.git', 'public', '.lock$', '.md$', 'forge.config.js', 'tsconfig.json'],
+    ignore: [
+      '.idea',
+      '.git',
+      'public',
+      '.lock$',
+      '.md$',
+      'forge.config.js',
+      'tsconfig.json',
+      'main/react-devtools-extension',
+    ],
     prune: true,
     afterCopy: [
       serialHooks([
