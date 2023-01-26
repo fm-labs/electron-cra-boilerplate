@@ -51,14 +51,14 @@ jobs:
       - name: Create a deb distribution bundle
         run: yarn run make:deb
 
-      - name: Upload zip bundle as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: electron-cra-boilerplate-zip
-          path: out/make/zip
-
-      - name: Upload deb as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: electron-cra-boilerplate-deb
-          path: out/make/deb
+#      - name: Upload zip bundle as artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: electron-cra-boilerplate-zip
+#          path: out/make/zip/**/*.zip
+#
+#      - name: Upload deb as artifact
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: electron-cra-boilerplate-deb
+#          path: out/make/deb/**/*.deb

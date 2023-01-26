@@ -142,12 +142,12 @@ Solution for Ubuntu/Debian users: Install rpm package
 - [ ] ASAR support
 - [x] ESLint
 - [x] Prettier
-- [ ] GitHub Actions Workflow for
+- [x] GitHub Actions Workflow for
   - [x] testing
   - [x] building
-  - [ ] packaging
-  - [ ] making
-- [ ] npm/yarn scripts to make specific electron-forge maker targets 
+  - [x] packaging
+  - [x] making
+- [x] npm/yarn scripts to make specific electron-forge maker targets 
 - [ ] Travis support
 - [ ] Badges
 
