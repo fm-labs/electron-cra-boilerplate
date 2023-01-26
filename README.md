@@ -6,10 +6,30 @@ Using [Create React App](https://github.com/facebook/create-react-app) (Typescri
 
 ## Quickstart
 
+### Installation
     $ git clone https://github.com/fm-labs/electron-cra-boilerplate.git my-electron-app
     $ cd my-electron-app
     $ yarn install
+
+### Run in developer mode
+
+Runs the Electron app and the Webpack development server for the React app.
+Changes in the React app source code, should be automatically updated in the Electron app.
+
     $ yarn run dev
+
+### Create Electron package
+
+Creates an Electron app package. Output is stored in `out/`.
+
+    $ yarn run package
+
+    // change to the output directory
+    // depending on your operating system, cpu architecture or electron-forge configuration
+    // the path might be different.
+    $ cd ./out/electron-cra-boilerplate-linux-x64
+    // run the packaged app
+    $ ./electron-cra-boilerplate
 
 
 
