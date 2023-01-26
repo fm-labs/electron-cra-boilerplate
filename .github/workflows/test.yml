@@ -2,15 +2,16 @@
 # electron-cra-boilerplate test workflow for GitHub actions
 #
 # This workflow executes on every push and pull request and will
+#
 # - Checkout the repository
 # - Install NodeJs v16, yarn and project dependencies
-# - Execute the testrunner
+# - Execute the test runner
 #
 # @author:  fm-labs <opensource@fmlabs.eu>
 # @version: 1
 ###
 
-name: Testing
+name: Test react app
 
 on:
   push:
@@ -19,7 +20,7 @@ on:
     branches: '*'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
