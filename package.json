@@ -45,6 +45,8 @@
     "eject": "react-scripts eject",
     "package": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge package --verbose",
     "make": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make",
+    "make:zip": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make --targets @electron-forge/maker-zip",
+    "make:deb": "GENERATE_SOURCEMAP=false react-scripts build && electron-forge make --targets @electron-forge/maker-deb",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ --fix"
   },
