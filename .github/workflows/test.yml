@@ -52,3 +52,5 @@ jobs:
       - name: Run the tests
         run: yarn test:nowatch
 
+      - name: Run the linter
+        run: yarn run lint
