@@ -1,0 +1,53 @@
+####
+# electron-cra-boilerplate test workflow for GitHub actions
+#
+# This workflow executes on every push and pull request and will
+# - Checkout the repository
+# - Install NodeJs v16, yarn and project dependencies
+# - Execute the testrunner
+#
+# @author:  fm-labs <opensource@fmlabs.eu>
+# @version: 1
+###
+
+name: Testing
+
+on:
+  push:
+    branches: '*'
+  pull_request:
+    branches: '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install yarn
+        run: npm install -g yarn
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Configure app
+        run: |
+          pwd
+          cp .env.test.github .env.test.local
+          cat .env.test.local
+
+      - name: Run the tests
+        run: yarn test:nowatch
+
