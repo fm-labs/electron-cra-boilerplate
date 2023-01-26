@@ -1,5 +1,17 @@
 {
-  "name": "cra-demo",
+  "name": "electron-cra-boilerplate",
+  "description": "Electron CRA boilerplate application",
+  "keywords": [
+    "electron", "electron-forge",
+    "react", "reactjs",
+    "cra", "create-react-app"
+  ],
+  "author": {
+    "name": "fm-labs",
+    "email": "opensource@fmlabs.eu",
+    "url": "https://github.com/fm-labs"
+  },
+  "license": "MIT",
   "version": "0.1.0",
   "main": "public/main/electron.js",
   "private": true,

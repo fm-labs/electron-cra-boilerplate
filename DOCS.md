@@ -44,11 +44,13 @@ Now we need the entry point script for electron's main process:
 
 ```javascript
 // public/main/electron.js
+// @TODO
 //...
 ```
 
 ```javascript
 // public/main/preload.js
+// @TODO
 //...
 ```
 
@@ -58,7 +60,6 @@ Now we have to add/update the `main` script location in your `package.json`.
 ```json
 {
   "main": "build/main/electron.js"
-  //...
 }
 ```
 
@@ -69,7 +70,6 @@ Now we have to add/update the `main` script location in your `package.json`.
 In package.json
 ```json
 {
-  // ...
   "main": "build/main/electron.js",
   "scripts": {
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
@@ -82,7 +82,6 @@ In package.json
     "make": "react-scripts build && electron-forge make"
   },
   "homepage": "."
-  // ... 
 }
 ```
 
@@ -96,4 +95,10 @@ The important settings here:
 
 ## Links
 
+* https://www.electronjs.org/docs/latest/
+* https://www.electronforge.io/
 * https://www.electronforge.io/import-existing-project
+* https://electron.github.io/electron-packager/main/index.html
+* https://dev.to/mandiwise/electron-apps-made-easy-with-create-react-app-and-electron-forge-560e
+
+Inspired by @mandiwise/cra-electron-forge-demo && 

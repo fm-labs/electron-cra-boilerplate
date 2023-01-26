@@ -1,10 +1,41 @@
-# Getting Started with Create React App
+# Getting Started with cra-electron-boilerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [cra-electron-boilerplate](https://github.com/fm-labs/cra-electron-boilerplate).
+
+Using [Create React App](https://github.com/facebook/create-react-app) (Typescript) + Electron + Electron Forge
+
+## Quickstart
+
+    $ git clone https://github.com/fm-labs/electron-cra-boilerplate.git my-electron-app
+    $ cd my-electron-app
+    $ yarn install
+    $ yarn run dev
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run dev`
+
+Runs the Electron app and the React app in development mode.
+The electron app will open automatically with browser-devtools and react-devtools attached.
+
+This command starts the webpack dev server and the electron app concurrently.
+
+### `npm run electron`
+Runs the Electron app in development mode.
+The electron app will open automatically with browser-devtools and react-devtools attached.
+
+### `npm run package`
+Creates an Electron app package.
+By default the packaged app is saved in the `out/` directory.
+
+
+### `npm run make`
+Takes a packaged Electron application and outputs a certain kind of distributable
+
 
 ### `npm start`
 
