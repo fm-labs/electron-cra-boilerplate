@@ -1,6 +1,13 @@
 module.exports = {
   packagerConfig: {
-    dir: "build"
+    dir: "build",
+    ignore: [
+      ".idea", ".git", "src", "public",
+      "\.lock$", "\.md$",
+      "forge.config.js",
+      "tsconfig.json"
+    ],
+    prune: true
   },
   rebuildConfig: {},
   makers: [
