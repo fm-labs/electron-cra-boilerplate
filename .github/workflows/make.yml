@@ -14,7 +14,7 @@
 # @version: 1
 ###
 
-name: Package electron app
+name: Make electron app
 
 on:
   push:
@@ -22,7 +22,7 @@ on:
       - '*'
 
 jobs:
-  package:
+  make:
     runs-on: ubuntu-latest
 
     steps:
@@ -55,10 +55,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: electron-cra-boilerplate-zip
-          path: make/zip
+          path: out/make/zip
 
       - name: Upload deb as artifact
         uses: actions/upload-artifact@v3
         with:
           name: electron-cra-boilerplate-deb
-          path: make/deb
+          path: out/make/deb
