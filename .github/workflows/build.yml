@@ -1,0 +1,62 @@
+####
+# electron-cra-boilerplate test workflow for GitHub actions
+#
+# This workflow executes on pushing new version tags and will
+#
+# - Checkout the repository
+# - Install NodeJs v16, yarn and project dependencies
+# - Execute the test runner
+# - Build the React app
+# - Create a build artefact from build results
+#
+# @author:  fm-labs <opensource@fmlabs.eu>
+# @version: 1
+###
+
+name: Build react app
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install yarn
+        run: npm install -g yarn
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Configure app
+        run: |
+          pwd
+          cp .env.test.github .env.test.local
+          cat .env.test.local
+
+      - name: Run the tests
+        run: yarn test:nowatch
+
+
+      - name: Upload build as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: react-app
+          path: build
+        #if: ${{ always() }} # Use always() to always run this step to publish test results when there are test failures
