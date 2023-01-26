@@ -107,3 +107,8 @@ Solution for Ubuntu/Debian users: Install rpm package
 * [Electron Documentation](https://www.electronjs.org/docs/latest/)
 * [Electron Forge Documentation](https://electronforge.io/)
 * [Electron Packager Documentation](https://github.com/electron/electron-packager)
+
+
+
+## TODO
+- [ ] Remove src from final Electron package

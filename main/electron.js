@@ -20,10 +20,11 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  console.log("MAIN WINDOW URL", `file://${path.join(__dirname, "../index.html")}`)
+  const mainWindowUrl = `file://${path.join(__dirname, "../build/index.html")}`
+  console.log("MAIN WINDOW URL", mainWindowUrl)
   mainWindow.loadURL(isDev
       ? "http://localhost:3000"
-      : `file://${path.join(__dirname, "../index.html")}`
+      : mainWindowUrl
   );
 
   // Open the DevTools.
