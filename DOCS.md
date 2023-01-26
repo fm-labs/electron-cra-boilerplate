@@ -1,11 +1,13 @@
-# Documentation
+# Internal documentation of how electron-cra-boilerplate is set up.
+
+**! You do not need to run these steps. Internal usage only !**
 
 ## Setup ReactJs
 
 Create new `create-react-app` project. We are using the `typescript` template here, because typescript is awesome :)
 
 
-    $ npx create-react-app --template=typescript cra-electron-demo
+    $ npx create-react-app --template=typescript electron-cra-boilerplate
 
 ## Setup electron
 
@@ -18,7 +20,7 @@ Create new `create-react-app` project. We are using the `typescript` template he
 
 ### a) Use import script
 
-    $ cd cra-electron-demo
+    $ cd electron-cra-boilerplate
     $ yarn add --dev @electorn-forge/cli
     $ yarn electron-forge import
 
@@ -65,9 +67,10 @@ Now we have to add/update the `main` script location in your `package.json`.
 
 
 
-## Configure
+## Configuration
 
-In package.json
+### package.json
+
 ```json
 {
   "main": "build/main/electron.js",
@@ -89,8 +92,30 @@ The important settings here:
 
 * `main`: Point to `build/main/electron.js`. This is only effective when running in developer mode.  
 * `homepage`: Set to `.` to load static assets relative to index.html
+* `scripts` 
+  * `dev` script: Run webpack dev server and electron app concurrently
+  * `electron`: Run electron app (waits for webpack dev server becomes ready)
+  * `package`: Create Electron app package via electron-forage
+  * `make`: Make distribution package via electron-forage
 
 
+### forge.config.js
+
+```javascript
+module.exports = {
+  packagerConfig: {
+    dir: "build",
+    ignore: [
+      ".idea", ".git", "src", "public",
+      "\.lock$", "\.md$",
+      "forge.config.js",
+      "tsconfig.json"
+    ],
+    prune: true
+  },
+  // ....
+}
+```
 
 
 ## Links

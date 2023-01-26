@@ -1,6 +1,6 @@
-# Getting Started with cra-electron-boilerplate
+# Getting Started with electron-cra-boilerplate
 
-This project was bootstrapped with [cra-electron-boilerplate](https://github.com/fm-labs/cra-electron-boilerplate).
+This project was bootstrapped with [electron-cra-boilerplate](https://github.com/fm-labs/electron-cra-boilerplate).
 
 Using [Create React App](https://github.com/facebook/create-react-app) (Typescript) + Electron + Electron Forge
 
@@ -90,8 +90,20 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Troubleshooting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Error: Cannot make for rpm during `yarn run make`
+
+Solution for Ubuntu/Debian users: Install rpm package
+
+    $ sudo apt install rpm
+
+
+## Useful links:
+
+* [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+* [React documentation](https://reactjs.org/)
+* [Electron Documentation](https://www.electronjs.org/docs/latest/)
+* [Electron Forge Documentation](https://electronforge.io/)
+* [Electron Packager Documentation](https://github.com/electron/electron-packager)
