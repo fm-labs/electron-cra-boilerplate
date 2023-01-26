@@ -19,7 +19,7 @@ name: Make electron app
 on:
   push:
     tags:
-      - '*'
+      - '*-make'
 
 jobs:
   make:
