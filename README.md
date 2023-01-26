@@ -112,3 +112,8 @@ Solution for Ubuntu/Debian users: Install rpm package
 
 ## TODO
 - [ ] Remove src from final Electron package
+- [ ] App icon
+- [ ] React Dev Tools
+- [ ] ASAR support
+- [ ] ESLint
+- [ ] Prettier
