@@ -9,15 +9,18 @@ if (require('electron-squirrel-startup')) {
 
 const createWindow = () => {
   // Create the browser window.
+  const preloadScriptPath = `file://${path.join(__dirname, "/preload.js")}`
+  console.log("PRELOAD SCRIPT PATH", preloadScriptPath)
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
-      preload: `file://${path.join(__dirname, "/preload.js")}`
+      preload: preloadScriptPath
     },
   });
 
   // and load the index.html of the app.
+  console.log("MAIN WINDOW URL", `file://${path.join(__dirname, "../index.html")}`)
   mainWindow.loadURL(isDev
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../index.html")}`
