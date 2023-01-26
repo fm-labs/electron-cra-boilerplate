@@ -138,7 +138,7 @@ Solution for Ubuntu/Debian users: Install rpm package
 - [ ] Remove src from final Electron package
 - [x] Disable source maps generation for production builds of react app
 - [ ] App icon
-- [ ] React Dev Tools - _Currently broken_
+- [x] React Dev Tools
 - [ ] ASAR support
 - [x] ESLint
 - [x] Prettier

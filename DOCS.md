@@ -68,6 +68,8 @@ Now we have to add/update the `main` script location in your `package.json`.
 
 ## Setup react-dev-tools
 
+### a) election-devtools-installer (currently broken)
+
     $ yarn add --dev electron-devtools-installer
 
 ```js
@@ -83,9 +85,32 @@ installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
   console.log('An error occurred: ', err);
 });
 // ...
-
 ```
 
+
+### b) Manually load extension
+
+1. Get the chrome extension contents. The extension Id of react-devtools-extension is `fmkadmapgofadopljbjfkapdkoienihi`.
+   1. Find the chrome extension directory on your system (On Ubuntu with chromium Snap the extension directory is located at ~/snap/common/chromium/Default/Extensions/. Non-snap versions often store data in ~/.config/chromium) 
+2. Copy extension files to `main/react-devtools-extension/[EXT_VERSION]`
+
+```js
+
+app.whenReady().then(async () => {
+  if (isDev) {
+    // manually loading react-devtools extension
+    const reactDevToolsPath = path.join(__dirname, 'react-devtools-extension/4_25_0_0')
+    const ext = await session.defaultSession.loadExtension(reactDevToolsPath, {
+      allowFileAccess: true,
+    })
+  }
+})
+```
+
+
+
+! Due to issues with Chromes Manifest v2 -> v3 migration, we need a react-devtools-extension version `< 4.27`, which has manifest v2 !
+At the time of writing only 4.27.1 was avaiable. I used a CRX mirror site to download v4.25.0 (https://www.crx4chrome.com/extensions/fmkadmapgofadopljbjfkapdkoienihi/).
 
 
 ## Configuration

@@ -71,13 +71,13 @@ app.whenReady().then(async () => {
     //   .catch((err) => {
     //     console.log('An error occurred: ', err)
     //   })
-    // // manually loading react-devtools extension
-    // const reactDevToolsPath = path.join(__dirname, 'react-devtools-extension/4.27.1_0')
-    // console.log('REACT DEV TOOLS PATH', reactDevToolsPath)
-    // const ext = await session.defaultSession.loadExtension(reactDevToolsPath, {
-    //   allowFileAccess: true,
-    // })
-    // console.log('EXT', ext)
+    // manually loading react-devtools extension
+    const reactDevToolsPath = path.join(__dirname, 'react-devtools-extension/4_25_0_0')
+    console.log('REACT DEV TOOLS PATH', reactDevToolsPath)
+    const ext = await session.defaultSession.loadExtension(reactDevToolsPath, {
+      allowFileAccess: true,
+    })
+    console.log('EXT', ext)
   }
 })
 
