@@ -136,6 +136,7 @@ Solution for Ubuntu/Debian users: Install rpm package
 
 ## TODO
 - [ ] Remove src from final Electron package
+- [x] Disable source maps generation for production builds of react app
 - [ ] App icon
 - [ ] React Dev Tools
 - [ ] ASAR support
@@ -149,3 +150,4 @@ Solution for Ubuntu/Debian users: Install rpm package
 - [ ] npm/yarn scripts to make specific electron-forge maker targets 
 - [ ] Travis support
 - [ ] Badges
+
