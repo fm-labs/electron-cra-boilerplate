@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "version": "0.1.0",
-  "main": "public/main/electron.js",
+  "main": "build/main/electron.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
