@@ -45,13 +45,13 @@ The `concurrently` package enables us to run multiple commands.
 Now we need the entry point script for electron's main process:
 
 ```javascript
-// public/main/electron.js
+// main/electron.js
 // @TODO
 //...
 ```
 
 ```javascript
-// public/main/preload.js
+// main/preload.js
 // @TODO
 //...
 ```
@@ -61,7 +61,7 @@ _! After the React app (the renderer app) has been built, the main process scrip
 Now we have to add/update the `main` script location in your `package.json`.
 ```json
 {
-  "main": "build/main/electron.js"
+  "main": "main/electron.js"
 }
 ```
 
@@ -73,7 +73,7 @@ Now we have to add/update the `main` script location in your `package.json`.
 
 ```json
 {
-  "main": "build/main/electron.js",
+  "main": "main/electron.js",
   "scripts": {
     "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
     "electron": "wait-on tcp:3000 && electron-forge start",
@@ -90,7 +90,7 @@ Now we have to add/update the `main` script location in your `package.json`.
 
 The important settings here:
 
-* `main`: Point to `build/main/electron.js`. This is only effective when running in developer mode.  
+* `main`: Point to `main/electron.js`. This is only effective when running in developer mode.  
 * `homepage`: Set to `.` to load static assets relative to index.html
 * `scripts` 
   * `dev` script: Run webpack dev server and electron app concurrently
@@ -106,15 +106,68 @@ module.exports = {
   packagerConfig: {
     dir: "build",
     ignore: [
-      ".idea", ".git", "src", "public",
-      "\.lock$", "\.md$",
-      "forge.config.js",
-      "tsconfig.json"
+      // ".idea", ".git", "src", "public",
+      // "\.lock$", "\.md$",
+      // "forge.config.js",
+      // "tsconfig.json"
     ],
     prune: true
   },
   // ....
 }
+```
+
+## Setup eslint and prettier
+
+
+    $ yarn add --dev eslint eslint-config-prettier eslint-plugin-prettier prettier
+
+Update `package.json`
+
+```json
+{
+  "scripts": {
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:prettier/recommended"
+    ]
+  }
+}
+
+```
+
+```text
+// .eslintignore
+
+/.idea/
+/.git/
+/build/
+/public/
+/node_modules/
+/out/
+
+```
+
+```text
+// .prettierrc.json
+
+{
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "semi": false,
+  "bracketSpacing": true,
+  "arrowParens": "always"
+}
+
+
 ```
 
 

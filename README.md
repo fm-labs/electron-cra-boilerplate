@@ -11,6 +11,8 @@ Using [Create React App](https://github.com/facebook/create-react-app) (Typescri
     $ cd my-electron-app
     $ yarn install
 
+! You can also use `npm` instead of `yarn` !
+
 ### Run in developer mode
 
 Runs the Electron app and the Webpack development server for the React app.
@@ -37,27 +39,37 @@ Creates an Electron app package. Output is stored in `out/`.
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `yarn run dev`
 
 Runs the Electron app and the React app in development mode.
 The electron app will open automatically with browser-devtools and react-devtools attached.
 
 This command starts the webpack dev server and the electron app concurrently.
 
-### `npm run electron`
+### `yarn run electron`
 Runs the Electron app in development mode.
 The electron app will open automatically with browser-devtools and react-devtools attached.
 
-### `npm run package`
+### `yarn run package`
 Creates an Electron app package.
 By default the packaged app is saved in the `out/` directory.
 
 
-### `npm run make`
+### `yarn run make`
 Takes a packaged Electron application and outputs a certain kind of distributable
 
 
-### `npm start`
+### `yarn run lint`
+Runs eslint and print errors/warnings to console
+
+
+### `yarn run lint:fix`
+Runs eslint and fix errors/warnings in source code files.
+
+
+
+
+### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -65,12 +77,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -80,7 +92,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `yarn run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -92,6 +104,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 
 ## Troubleshooting
+
+### Error: yarn not found
+
+    $ npm i -g yarn
+
+
 
 ### Error: Cannot make for rpm during `yarn run make`
 
@@ -115,5 +133,5 @@ Solution for Ubuntu/Debian users: Install rpm package
 - [ ] App icon
 - [ ] React Dev Tools
 - [ ] ASAR support
-- [ ] ESLint
-- [ ] Prettier
+- [x] ESLint
+- [x] Prettier
