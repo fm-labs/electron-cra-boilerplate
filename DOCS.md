@@ -8,6 +8,7 @@ Create new `create-react-app` project. We are using the `typescript` template he
 
 
     $ npx create-react-app --template=typescript electron-cra-boilerplate
+    $ cd electron-cra-boilerplate
 
 ## Setup electron
 
@@ -20,8 +21,7 @@ Create new `create-react-app` project. We are using the `typescript` template he
 
 ### a) Use import script
 
-    $ cd electron-cra-boilerplate
-    $ yarn add --dev @electorn-forge/cli
+    $ yarn add --dev @electron-forge/cli
     $ yarn electron-forge import
 
 ### b) Manually install electron-forge dependencies
@@ -46,14 +46,12 @@ Now we need the entry point script for electron's main process:
 
 ```javascript
 // main/electron.js
-// @TODO
-//...
+// -> see source files
 ```
 
 ```javascript
 // main/preload.js
-// @TODO
-//...
+// -> see source files
 ```
 
 _! After the React app (the renderer app) has been built, the main process scripts are available in the `build/main` directory. !_
