@@ -141,7 +141,11 @@ Solution for Ubuntu/Debian users: Install rpm package
 - [ ] ASAR support
 - [x] ESLint
 - [x] Prettier
-- [ ] GitHub Actions Workflow for testing/building/packaging
+- [ ] GitHub Actions Workflow for
+  - [x] testing
+  - [x] building
+  - [ ] packaging
+  - [ ] making
 - [ ] npm/yarn scripts to make specific electron-forge maker targets 
 - [ ] Travis support
 - [ ] Badges

@@ -1,5 +1,6 @@
 {
   "name": "electron-cra-boilerplate",
+  "version": "0.1.0",
   "description": "Electron CRA boilerplate application",
   "keywords": [
     "electron",
@@ -15,7 +16,6 @@
     "url": "https://github.com/fm-labs"
   },
   "license": "MIT",
-  "version": "0.1.0",
   "main": "main/electron.js",
   "private": true,
   "dependencies": {
